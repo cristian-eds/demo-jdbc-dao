@@ -10,21 +10,28 @@ import model.entities.Seller;
 public class Program {
 
 	public static void main(String[] args) {
-		
+
 		SellerDao sellerDao = FactoryDao.createSellerDao();
-		
-		
+
 		System.out.println("TEST: seller by id");
 		Seller seller = sellerDao.findById(2);
 		System.out.println(seller);
-		
-		
-		System.out.println("\n TEST: selelr by department");
-		
-		Department department = new Department(2,null);
+
+		System.out.println("\n TEST: seller by department");
+
+		Department department = new Department(2, null);
 		List<Seller> list = sellerDao.findByDepartment(department);
+
+		for (Seller sell : list) {
+			System.out.println(sell);
+		}
+
+		System.out.println("\n TEST: seller find all");
+
 		
-		for(Seller sell : list) {
+		list = sellerDao.findAll();
+
+		for (Seller sell : list) {
 			System.out.println(sell);
 		}
 
