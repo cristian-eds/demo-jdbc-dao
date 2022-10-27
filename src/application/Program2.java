@@ -8,12 +8,18 @@ public class Program2 {
 
 	public static void main(String[] args) {
 		
-		DepartmentDao departmetnDao = FactoryDao.createDepartmentDao();
+		DepartmentDao departmentDao = FactoryDao.createDepartmentDao();
 		
 		System.out.println("TEST: Insert Department");
 		Department dep = new Department(null, "RH");
-		departmetnDao.insert(dep);
+		departmentDao.insert(dep);
 		System.out.println("Inserted!");
+		
+		System.out.println("\n TEST: Update Department");
+		dep = departmentDao.findById(3);
+		dep.setName("Test");
+		departmentDao.update(dep);
+		System.out.println("Updated!");
 		
 
 	}
