@@ -47,6 +47,18 @@ public class Program {
 		seller.setName("Cláudio Pira");
 		sellerDao.update(seller);
 		System.out.println("Updated!");
+		
+		
+		System.out.println("TESTE: Seller delete");
+		sellerDao.deleteById(8);
+		System.out.println("\n Deleted!");
+		
+		list = sellerDao.findAll();
+
+		for (Seller sell : list) {
+			System.out.println(sell);
+		}
+		
 
 	}
 
