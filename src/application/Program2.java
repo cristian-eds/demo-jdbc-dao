@@ -29,6 +29,9 @@ public class Program2 {
 			System.out.println(depart);
 		}
 		
+		System.out.println("\n TEST: Delete by ID");
+		departmentDao.deleteById(7);
+		
 
 	}
 
